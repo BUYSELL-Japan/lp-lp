@@ -393,6 +393,20 @@
         <h2>すべてが含まれた、<br /><span class="gradient-text">シンプルなワンプラン</span></h2>
         <p class="section-description">初期費用無料でリスクなく導入。インバウンド集客の強力な武器を、圧倒的な低コストで。</p>
       </div>
+
+      <!-- Billing Toggle -->
+      <div class="billing-toggle-wrapper" data-aos="fade-up" data-aos-delay="50">
+        <div class="billing-toggle">
+          <span class="billing-label billing-label-monthly active" id="labelMonthly">月額払い</span>
+          <button class="toggle-switch" id="billingToggle" aria-label="年額払いに切り替え">
+            <span class="toggle-knob"></span>
+          </button>
+          <span class="billing-label billing-label-yearly" id="labelYearly">
+            年額払い
+            <span class="discount-badge">20%OFF</span>
+          </span>
+        </div>
+      </div>
       
       <div class="pricing-card-modern" data-aos="zoom-in" data-aos-delay="100">
         <div class="pricing-badge-burst">
@@ -411,17 +425,38 @@
                 <span class="strike">¥50,000</span>
                 <span class="val">¥0</span>
               </div>
-              <div class="price-monthly">
-                <span class="currency">¥</span>
-                <span class="number">2,980</span>
-                <span class="period">/月 (税込)</span>
+
+              <!-- Monthly Price (default) -->
+              <div class="price-display" id="priceMonthly">
+                <div class="price-monthly">
+                  <span class="currency">¥</span>
+                  <span class="number">2,980</span>
+                  <span class="period">/月 (税込)</span>
+                </div>
+              </div>
+
+              <!-- Yearly Price (hidden by default) -->
+              <div class="price-display price-display-hidden" id="priceYearly">
+                <div class="price-yearly-original">
+                  <span class="strike-through-price">¥35,760</span>
+                  <span class="yearly-arrow">→</span>
+                </div>
+                <div class="price-monthly">
+                  <span class="currency">¥</span>
+                  <span class="number">28,600</span>
+                  <span class="period">/年 (税込)</span>
+                </div>
+                <div class="price-yearly-savings">
+                  <span class="savings-badge">年間 ¥7,160 おトク！</span>
+                  <span class="per-month-equiv">月あたり約 ¥2,383</span>
+                </div>
               </div>
             </div>
             
-            <a href="#register" class="btn btn-primary btn-lg btn-full btn-glow-effect pulse-glow">
+            <button id="checkoutBtn" class="btn btn-primary btn-lg btn-full btn-glow-effect pulse-glow" data-plan="monthly">
               今すぐ無料で始める（安全なStripe決済）
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+            </button>
             <p class="micro-text" style="color: var(--color-text-muted); margin-top: 1rem;">お支払いは世界基準の安全な「Stripe決済」をご利用いただけます。<br>無料お試し期間中に解約された場合、<strong style="color: #f87171;">料金は一切発生しません。</strong></p>
           </div>
           
