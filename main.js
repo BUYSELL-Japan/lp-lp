@@ -136,91 +136,6 @@ body.addEventListener('mousemove', (e) => {
   });
 });
 
-// --- Billing Toggle (Monthly/Yearly) ---
-const billingToggle = document.getElementById('billingToggle');
-const labelMonthly = document.getElementById('labelMonthly');
-const labelYearly = document.getElementById('labelYearly');
-const priceMonthly = document.getElementById('priceMonthly');
-const priceYearly = document.getElementById('priceYearly');
-const checkoutBtn = document.getElementById('checkoutBtn');
-
-if (billingToggle) {
-  let isYearly = false;
-
-  function updateBillingDisplay() {
-    if (isYearly) {
-      billingToggle.classList.add('active');
-      labelMonthly.classList.remove('active');
-      labelYearly.classList.add('active');
-      priceMonthly.classList.add('price-display-hidden');
-      priceYearly.classList.remove('price-display-hidden');
-      checkoutBtn.setAttribute('data-plan', 'yearly');
-    } else {
-      billingToggle.classList.remove('active');
-      labelMonthly.classList.add('active');
-      labelYearly.classList.remove('active');
-      priceMonthly.classList.remove('price-display-hidden');
-      priceYearly.classList.add('price-display-hidden');
-      checkoutBtn.setAttribute('data-plan', 'monthly');
-    }
-  }
-
-  billingToggle.addEventListener('click', () => {
-    isYearly = !isYearly;
-    updateBillingDisplay();
-  });
-
-  labelMonthly.addEventListener('click', () => {
-    isYearly = false;
-    updateBillingDisplay();
-  });
-
-  labelYearly.addEventListener('click', () => {
-    isYearly = true;
-    updateBillingDisplay();
-  });
-}
-
-// --- Stripe Checkout ---
-if (checkoutBtn) {
-  const STRIPE_CHECKOUT_API = 'https://1p5i8eve1i.execute-api.ap-southeast-2.amazonaws.com/prod/checkout';
-  const PRICE_IDS = {
-    monthly: 'price_1TGpUOF0xTh0wRdTLx34wepz',
-    yearly: 'price_1TGBYLF0xTh0wRdTVNBi6kj4'
-  };
-
-  checkoutBtn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    checkoutBtn.disabled = true;
-    checkoutBtn.textContent = '処理中...';
-
-    try {
-      const plan = checkoutBtn.getAttribute('data-plan') || 'monthly';
-      const priceId = PRICE_IDS[plan];
-
-      const response = await fetch(STRIPE_CHECKOUT_API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ price_id: priceId })
-      });
-
-      if (!response.ok) {
-        throw new Error('Checkout session creation failed');
-      }
-
-      const data = await response.json();
-      if (data.url) {
-        window.location.href = data.url;
-      }
-    } catch (error) {
-      console.error('Checkout error:', error);
-      alert('エラーが発生しました。時間を置いて再度お試しください。');
-      checkoutBtn.disabled = false;
-      checkoutBtn.innerHTML = '今すぐ無料で始める（安全なStripe決済）<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
-    }
-  });
-}
-
 // --- Modal Logic (Legal Documents) ---
 window.openModal = function(modalId, event) {
   if (event) event.preventDefault();
@@ -244,5 +159,31 @@ document.addEventListener('click', (e) => {
   if (e.target.classList.contains('modal-overlay')) {
     e.target.classList.remove('active');
     document.body.style.overflow = '';
+  }
+});
+
+
+// ====== Pricing Toggle ======
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('pricing-toggle');
+  const labelMonthly = document.getElementById('label-monthly');
+  const labelYearly = document.getElementById('label-yearly');
+  const priceMonthly = document.getElementById('price-monthly-display');
+  const priceYearly = document.getElementById('price-yearly-display');
+
+  if (toggle) {
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) { // Yearly
+        labelYearly.classList.add('active');
+        labelMonthly.classList.remove('active');
+        priceYearly.classList.remove('hidden');
+        priceMonthly.classList.add('hidden');
+      } else { // Monthly
+        labelMonthly.classList.add('active');
+        labelYearly.classList.remove('active');
+        priceMonthly.classList.remove('hidden');
+        priceYearly.classList.add('hidden');
+      }
+    });
   }
 });
