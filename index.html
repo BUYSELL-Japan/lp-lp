@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -329,17 +329,28 @@
       </div>
       
       <div class="cta-wrapper text-center" style="margin-top: var(--space-16);" data-aos="fade-up">
-        <a href="#pricing" class="btn btn-primary btn-lg pulse-glow" style="padding: var(--space-4)   <section id="pricing" class="bg-gray">
+
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="bg-gray">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">料金・プラン</span>
         <h2>すべてが含まれた、<br /><span class="gradient-text">選べる2つの応援プラン</span></h2>
         <p class="section-description">初期費用無料でリスクなく導入。インバウンド集客の強力な武器を、圧倒的な低コストで提供します。</p>
       </div>
-      
+
       <div class="pricing-badge-burst-global" data-aos="zoom-in">
         <div class="badge-bg"></div>
         <span>🔥</span> 今なら全プラン <strong>初月無料</strong> キャンペーン中！
+      </div>
+
+      <div class="pricing-toggle-container" data-aos="fade-up">
+        <span class="toggle-label active" id="label-monthly">月額払い</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="pricing-toggle">
+          <span class="slider round"></span>
+        </label>
+        <span class="toggle-label" id="label-yearly">年額払い <span class="discount-badge">20% OFF🔥</span></span>
       </div>
 
       <div class="pricing-grid-modern">
@@ -349,151 +360,66 @@
             <h3>月額プラン</h3>
             <p>まずはお試しで始めたい方へ</p>
           </div>
-          <div class="price-display">
-            <span class="currency">¥</span>
-            <span class="number">2,980</span>
-            <span class="period">/月 (税込)</span>
+          <div class="price-box">
+            <div class="price-initial">
+              <span>初期費用</span>
+              <span class="strike">¥50,000</span>
+              <span class="val">¥0</span>
+            </div>
+            <!-- Monthly Pricing -->
+            <div class="price-display" id="price-monthly-display">
+              <span class="currency">¥</span>
+              <span class="number">2,980</span>
+              <span class="period">/月 (税込)</span>
+            </div>
+            <!-- Yearly Pricing -->
+            <div class="price-display hidden" id="price-yearly-display">
+              <div class="old-price">通常 ¥35,760</div>
+              <div class="current-price">
+                <span class="currency">¥</span>
+                <span class="number">2,380</span>
+                <span class="period">/月 (税込)</span>
+              </div>
+              <div class="savings">✨ 年間 ¥7,160 おトク！</div>
+            </div>
           </div>
           <ul class="pricing-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 4ヶ国語AI自動翻訳</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 無制限の更新・プレビュー</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 独自サブドメイン対応</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> <strong>初月 ¥0 (トライアル)</strong></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 業界最高水準のAI自動翻訳</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> スマホ完全対応</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> サブドメイン提供</li>
           </ul>
-          <button onclick="checkout('monthly')" class="btn btn-outline btn-lg btn-full">
-            月額で今すぐ始める
-          </button>
+          <a href="#register" class="btn btn-outline btn-full">無料で始める</a>
         </div>
 
         <!-- Annual Plan (Recommended) -->
         <div class="pricing-card-modern featured" data-aos="fade-up" data-aos-delay="200">
-          <div class="featured-label">1番人気！20% OFF</div>
+          <div class="featured-label">1番人気！</div>
           <div class="pricing-plan-header">
-            <h3>年額払いプラン</h3>
-            <p>長期的に集客を最大化したい方へ</p>
+            <h3>プロフェッショナル</h3>
+            <p>長期的に成果を出したい方へ</p>
           </div>
-          <div class="price-display">
-            <div class="old-price">通常 ¥35,760</div>
-            <div class="current-price">
-              <span class="currency">¥</span>
-              <span class="number">28,600</span>
-              <span class="period">/年 (税込)</span>
+          <div class="price-box">
+            <div class="price-initial">
+              <span>初期費用</span>
+              <span class="strike">¥100,000</span>
+              <span class="val">¥0</span>
             </div>
-            <div class="price-note">実質月額 ¥2,383</div>
+            <div class="price-display">
+              <span class="currency">¥</span>
+              <span class="number">9,800</span>
+              <span class="period">/月〜</span>
+            </div>
           </div>
           <ul class="pricing-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 全機能利用可能</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 専用ドメイン対応</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 優先サポート</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> <strong>¥7,160 お得！</strong></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> <strong>初月 ¥0 (トライアル)</strong></li>
           </ul>
-          <button onclick="checkout('annual')" class="btn btn-primary btn-lg btn-full btn-glow-effect pulse-glow">
-            年額で今すぐ始める
-          </button>
-        </div>
-      </div>
-
-      <div class="pricing-footer text-center" data-aos="fade-up">
-        <p class="micro-text">
-          お支払いは世界基準の安全な「Stripe決済」をご利用いただけます。<br>
-          無料期間（30日間）終了後に課金が開始されます。期間内の解約で<strong>料金は一切かかりません。</strong>
-        </p>
-        <div class="payment-methods">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="height: 20px; opacity: 0.6; display: none;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" style="height: 12px; opacity: 0.6; margin: 0 10px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height: 20px; opacity: 0.6; margin: 0 10px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="Amex" style="height: 20px; opacity: 0.6; margin: 0 10px; display: none;">
-        </div>
-      </div>
-    </div>
-  </section>
-�ら世界中からアクセス可能なLPに。</p>
-          </div>
+          <a href="#contact" class="btn btn-primary btn-full">お問い合わせ</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PRICING ===== -->
-  <section id="pricing" class="bg-gray">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">料金・プラン</span>
-        <h2>すべてが含まれた、<br /><span class="gradient-text">シンプルなワンプラン</span></h2>
-        <p class="section-description">初期費用無料でリスクなく導入。インバウンド集客の強力な武器を、圧倒的な低コストで。</p>
-      </div>
-      
-      <div class="pricing-card-modern" data-aos="zoom-in" data-aos-delay="100">
-        <div class="pricing-badge-burst">
-          <div class="badge-bg"></div>
-          <span>🔥</span> 初月完全無料！
-        </div>
-        
-        
-        <div class="pricing-toggle-container">
-          <span class="toggle-label active" id="label-monthly">月額払い</span>
-          <label class="toggle-switch">
-            <input type="checkbox" id="pricing-toggle">
-            <span class="slider round"></span>
-          </label>
-          <span class="toggle-label" id="label-yearly">年額払い <span class="discount-badge">20% OFF🔥</span></span>
-        </div>
-
-        <div class="pricing-layout">
-          <div class="pricing-left">
-            <h3>スタンダードプラン</h3>
-            <p class="desc">多言語Web集客に必要なすべての機能を無制限で。</p>
-            
-            <div class="price-box">
-              <div class="price-initial">
-                <span>初期費用</span>
-                <span class="strike">¥50,000</span>     
-                <span class="val">¥0</span>
-              </div>        
-              
-              <!-- Monthly Pricing -->
-              <div class="price-display" id="price-monthly-display">
-                <span class="currency">¥</span>
-                <span class="number">2,980</span>       
-                <span class="period">/月 (税込)</span>
-              </div>        
-
-              <!-- Yearly Pricing -->
-              <div class="price-display hidden" id="price-yearly-display">
-                <div class="old-price">通常 ¥35,760</div>
-                <div class="current-price">
-                  <span class="currency">¥</span>
-                  <span class="number">28,600</span>       
-                  <span class="period">/年 (税込)</span>
-                </div>
-                <div class="savings">✨ 年間 ¥7,160 おトク！</div>
-              </div>
-            </div>
-            
-            <a href="#register" class="btn btn-primary btn-lg btn-full btn-glow-effect pulse-glow">
-              今すぐ無料で始める（安全なStripe決済）
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <p class="micro-text" style="color: var(--color-text-muted); margin-top: 1rem;">お支払いは世界基準の安全な「Stripe決済」をご利用いただけます。<br>無料お試し期間中に解約された場合、<strong style="color: #f87171;">料金は一切発生しません。</strong></p>
-          </div>
-          
-          <div class="pricing-right">
-            <h4>含まれる機能</h4>
-            <ul class="pricing-feature-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 日本語+英・繁・韓の4言語対応</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 業界最高水準のAI自動翻訳</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> スマホ完全対応のプレミアムデザイン</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> リアルタイム更新システム (CMS)</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> サブドメイン (global-reaches.com)</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> SSL対応・セキュリティ対策</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
   <section id="faq">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
