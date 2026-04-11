@@ -248,3 +248,66 @@ function _applyTemplateSelection(themeId, showBar) {
 window.getSelectedTemplate = function() {
   return localStorage.getItem('landy_selected_template') || 'theme1';
 };
+
+// ====== Checkout Submission ======
+document.addEventListener('DOMContentLoaded', () => {
+  const checkoutBtn = document.getElementById('checkout-btn');
+  const toggle = document.getElementById('pricing-toggle');
+
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      
+      // ボタンをローディング状態にする
+      checkoutBtn.style.pointerEvents = 'none';
+      checkoutBtn.style.opacity = '0.7';
+      const originalText = checkoutBtn.innerHTML;
+      checkoutBtn.innerHTML = '処理中... <div class="spinner"></div>'; // (spinnerのCSSは仮)
+
+      try {
+        // 月額か年額かを判定
+        const planType = (!toggle || !toggle.checked) ? 'monthly' : 'yearly';
+        
+        // テンプレートIDを取得
+        const templateId = window.getSelectedTemplate();
+        
+        // 新規登録用のstoreId(仮)を生成 (ULID/UUID相当として、安全なランダム文字列)
+        // ※ すでにユーザーが入力したサブドメインなどがあればそれを利用するのがベストですが、
+        // 今回は決済後に登録が完了するフローのためランダムに生成しています。
+        const storeId = 'store_' + crypto.randomUUID().replace(/-/g, '').substring(0, 16);
+        
+        const response = await fetch("https://1p5i8eve1i.execute-api.ap-southeast-2.amazonaws.com/prod/checkout", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            storeId,
+            planType,
+            templateId
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error("チェックアウトセッションの作成に失敗しました: " + response.statusText);
+        }
+
+        const data = await response.json();
+        if (data.url) {
+            // Stripe支払画面へリダイレクト
+            window.location.href = data.url;
+        } else {
+            throw new Error("決済URLが見つかりません。");
+        }
+
+      } catch (error) {
+        console.error("Checkout validation error:", error);
+        alert("エラーが発生しました。時間を置いて再度お試しいただくか、サポートへご連絡ください。");
+        // ボタンを元に戻す
+        checkoutBtn.innerHTML = originalText;
+        checkoutBtn.style.pointerEvents = 'auto';
+        checkoutBtn.style.opacity = '1';
+      }
+    });
+  }
+});
