@@ -187,3 +187,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// ====== Template Selection ======
+const TEMPLATE_NAMES = {
+  theme1: 'Standard',
+  theme2: 'Modern',
+  theme3: 'Elegant',
+};
+
+// localStorage からテンプレートIDを復元（ページロード時）
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('landy_selected_template') || 'theme1';
+  _applyTemplateSelection(savedTheme, false);
+});
+
+/**
+ * テンプレートを選択する（ボタン onclick から呼ばれる）
+ * @param {string} themeId - 'theme1' | 'theme2' | 'theme3'
+ */
+window.selectTemplate = function(themeId) {
+  localStorage.setItem('landy_selected_template', themeId);
+  _applyTemplateSelection(themeId, true);
+
+  // 少し遅らせてからスムーズスクロール
+  setTimeout(() => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      const headerHeight = document.getElementById('header')?.offsetHeight || 0;
+      const top = pricingSection.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }, 300);
+};
+
+function _applyTemplateSelection(themeId, showBar) {
+  // カードのselectedクラスを切り替え
+  document.querySelectorAll('.template-card').forEach(card => {
+    card.classList.toggle('selected', card.dataset.theme === themeId);
+  });
+
+  // 選択バーを表示
+  const bar = document.getElementById('templateSelectedBar');
+  const barText = document.getElementById('templateSelectedText');
+  if (bar && barText) {
+    const name = TEMPLATE_NAMES[themeId] || themeId;
+    barText.textContent = `${name} テーマを選択しました。このまま下の料金セクションへ進んでください。`;
+    if (showBar) {
+      bar.classList.add('visible');
+    } else {
+      // ページロード時は保存済みなら表示
+      const saved = localStorage.getItem('landy_selected_template');
+      if (saved) bar.classList.add('visible');
+    }
+  }
+}
+
+/**
+ * 現在選択されているテンプレートIDを取得
+ */
+window.getSelectedTemplate = function() {
+  return localStorage.getItem('landy_selected_template') || 'theme1';
+};
