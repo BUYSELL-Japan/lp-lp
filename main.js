@@ -271,38 +271,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // テンプレートIDを取得
         const templateId = window.getSelectedTemplate();
         
-        // 新規登録用のstoreId(仮)を生成 (ULID/UUID相当として、安全なランダム文字列)
-        // ※ すでにユーザーが入力したサブドメインなどがあればそれを利用するのがベストですが、
-        // 今回は決済後に登録が完了するフローのためランダムに生成しています。
-        const storeId = 'store_' + crypto.randomUUID().replace(/-/g, '').substring(0, 16);
+        // RegisterアプリへのURLを決定
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const registerBaseUrl = isLocal ? 'http://localhost:5173' : 'https://register.global-reaches.com'; 
         
-        const response = await fetch("https://1p5i8eve1i.execute-api.ap-southeast-2.amazonaws.com/prod/checkout", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            storeId,
-            planType,
-            templateId
-          })
-        });
-
-        if (!response.ok) {
-          throw new Error("チェックアウトセッションの作成に失敗しました: " + response.statusText);
-        }
-
-        const data = await response.json();
-        if (data.url) {
-            // Stripe支払画面へリダイレクト
-            window.location.href = data.url;
-        } else {
-            throw new Error("決済URLが見つかりません。");
-        }
+        // パラメータを付与してリダイレクト
+        const redirectUrl = `${registerBaseUrl}/?theme=${templateId}&plan=${planType}`;
+        window.location.href = redirectUrl;
 
       } catch (error) {
-        console.error("Checkout validation error:", error);
-        alert("エラーが発生しました。時間を置いて再度お試しいただくか、サポートへご連絡ください。");
+        console.error("Transition error:", error);
+        alert("エラーが発生しました。");
         // ボタンを元に戻す
         checkoutBtn.innerHTML = originalText;
         checkoutBtn.style.pointerEvents = 'auto';
