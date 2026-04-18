@@ -23,12 +23,10 @@
         <a href="#features">特徴</a>
         <a href="#how-it-works">使い方</a>
         <a href="#multilingual">多言語対応</a>
-        <a href="#templates">テンプレート</a>
         <a href="#pricing">料金</a>
         <a href="#faq">FAQ</a>
       </nav>
       <a href="#pricing" class="btn btn-primary btn-sm header-cta">
-        <input type="hidden" name="templateId" value="default">
         <span>今すぐ無料で始める</span>
         <div class="btn-glow"></div>
       </a>
@@ -40,9 +38,9 @@
       <a href="#features">特徴</a>
       <a href="#how-it-works">使い方</a>
       <a href="#multilingual">多言語対応</a>
-      <a href="#templates">テンプレート</a>
       <a href="#pricing">料金</a>
-      <a href="#templates" class="btn btn-primary">テンプレートを選ぶ</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing" class="btn btn-primary">今すぐ無料で始める</a>
     </nav>
   </header>
 
@@ -331,285 +329,163 @@
       </div>
       
       <div class="cta-wrapper text-center" style="margin-top: var(--space-16);" data-aos="fade-up">
-
-
-  <!-- ===== TEMPLATE GALLERY ===== -->
-  <section id="templates" class="templates-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">テンプレート選択</span>
-        <h2>あなたのブランドに合う<br /><span class="gradient-text">デザインを選ぼう</span></h2>
-        <p class="section-description">3つのプロデザインから選択。いつでも後から変更も可能です。</p>
-      </div>
-
-      <div class="templates-grid" data-aos="fade-up" data-aos-delay="100">
-
-        <!-- Theme 1: Standard -->
-        <div class="template-card" id="tpl-theme1" data-theme="theme1">
-          <div class="template-badge">人気 No.1</div>
-          <div class="template-preview">
-            <div class="template-preview-inner tpl-standard">
-              <div class="tpl-nav-bar">
-                <span class="tpl-logo-dot"></span>
-                <div class="tpl-nav-links"><span></span><span></span><span></span></div>
-              </div>
-              <div class="tpl-hero tpl-hero-standard">
-                <div class="tpl-hero-text">
-                  <div class="tpl-h1"></div>
-                  <div class="tpl-h2"></div>
-                  <div class="tpl-btn tpl-btn-teal"></div>
-                </div>
-              </div>
-              <div class="tpl-cards-row">
-                <div class="tpl-card tpl-card-teal"></div>
-                <div class="tpl-card tpl-card-teal"></div>
-                <div class="tpl-card tpl-card-teal"></div>
-              </div>
-            </div>
-          </div>
-          <div class="template-info">
-            <h3 class="template-name">Standard</h3>
-            <p class="template-desc">清潔感のある王道スタイル。どんな飲食店にも合う万能デザイン。</p>
-            <div class="template-tags">
-              <span>ティール</span><span>モダン</span><span>清潔感</span>
-            </div>
-          </div>
-          <div class="template-actions">
-            <a href="/demo/theme1" target="_blank" class="btn btn-ghost btn-sm template-demo-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              デモを見る
-            </a>
-            <button class="btn btn-primary btn-sm template-select-btn" onclick="selectTemplate('theme1')">
-              このテーマで始める →
-            </button>
-          </div>
-        </div>
-
-        <!-- Theme 2: Modern -->
-        <div class="template-card" id="tpl-theme2" data-theme="theme2">
-          <div class="template-badge template-badge-dark">スタイリッシュ</div>
-          <div class="template-preview">
-            <div class="template-preview-inner tpl-modern">
-              <div class="tpl-nav-bar tpl-nav-dark">
-                <span class="tpl-logo-dot tpl-logo-blue"></span>
-                <div class="tpl-nav-links"><span class="tpl-link-dark"></span><span class="tpl-link-dark"></span><span class="tpl-link-dark"></span></div>
-              </div>
-              <div class="tpl-hero tpl-hero-dark">
-                <div class="tpl-hero-text">
-                  <div class="tpl-h1 tpl-h1-light"></div>
-                  <div class="tpl-h2 tpl-h2-light"></div>
-                  <div class="tpl-btn tpl-btn-blue"></div>
-                </div>
-              </div>
-              <div class="tpl-cards-row">
-                <div class="tpl-card tpl-card-dark"></div>
-                <div class="tpl-card tpl-card-dark"></div>
-                <div class="tpl-card tpl-card-dark"></div>
-              </div>
-            </div>
-          </div>
-          <div class="template-info">
-            <h3 class="template-name">Modern</h3>
-            <p class="template-desc">洗練されたダークモード。夜景・バー・高級飲食店に映えるデザイン。</p>
-            <div class="template-tags">
-              <span>ダーク</span><span>スタイリッシュ</span><span>高級感</span>
-            </div>
-          </div>
-          <div class="template-actions">
-            <a href="/demo/theme2" target="_blank" class="btn btn-ghost btn-sm template-demo-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              デモを見る
-            </a>
-            <button class="btn btn-primary btn-sm template-select-btn" onclick="selectTemplate('theme2')">
-              このテーマで始める →
-            </button>
-          </div>
-        </div>
-
-        <!-- Theme 3: Elegant -->
-        <div class="template-card" id="tpl-theme3" data-theme="theme3">
-          <div class="template-badge template-badge-gold">上質・和風</div>
-          <div class="template-preview">
-            <div class="template-preview-inner tpl-elegant">
-              <div class="tpl-nav-bar tpl-nav-cream">
-                <span class="tpl-logo-dot tpl-logo-gold"></span>
-                <div class="tpl-nav-links"><span class="tpl-link-stone"></span><span class="tpl-link-stone"></span><span class="tpl-link-stone"></span></div>
-              </div>
-              <div class="tpl-hero tpl-hero-cream">
-                <div class="tpl-hero-text tpl-text-center">
-                  <div class="tpl-line-gold"></div>
-                  <div class="tpl-h1 tpl-h1-stone"></div>
-                  <div class="tpl-h2 tpl-h2-stone"></div>
-                  <div class="tpl-line-gold"></div>
-                </div>
-              </div>
-              <div class="tpl-list-rows">
-                <div class="tpl-list-row"></div>
-                <div class="tpl-list-row"></div>
-                <div class="tpl-list-row"></div>
-              </div>
-            </div>
-          </div>
-          <div class="template-info">
-            <h3 class="template-name">Elegant</h3>
-            <p class="template-desc">和の美しさと余白の美学。高級和食・割烹・茶屋に最適なデザイン。</p>
-            <div class="template-tags">
-              <span>ベージュ</span><span>和風</span><span>エレガント</span>
-            </div>
-          </div>
-          <div class="template-actions">
-            <a href="/demo/theme3" target="_blank" class="btn btn-ghost btn-sm template-demo-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              デモを見る
-            </a>
-            <button class="btn btn-primary btn-sm template-select-btn" onclick="selectTemplate('theme3')">
-              このテーマで始める →
-            </button>
-          </div>
-        </div>
-
-      </div><!-- /.templates-grid -->
-
-      <!-- Selected template indicator -->
-      <div class="template-selected-bar" id="templateSelectedBar" data-aos="fade-up">
-        <div class="template-selected-inner">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
-          <span id="templateSelectedText">Standard テーマを選択しました。このまま下の料金セクションへ進んでください。</span>
-          <a href="#pricing" class="btn btn-primary btn-sm">料金・プランを見る →</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== PRICING ===== -->
-  <section id="pricing" class="pricing-section">
+        <a href="#pricing" class="btn btn-primary btn-lg pulse-glow" style="padding: var(--space-4)   <section id="pricing" class="bg-gray">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">料金・プラン</span>
-        <h2>すべてが含まれた、<br /><span class="gradient-text">シンプルな1つのプラン</span></h2>
-        <p class="section-description">初期費用¥0でリスクなく導入。インバウンド集客の強力な武器を、圧倒的な低コストで提供します。</p>
+        <h2>すべてが含まれた、<br /><span class="gradient-text">選べる2つの応援プラン</span></h2>
+        <p class="section-description">初期費用無料でリスクなく導入。インバウンド集客の強力な武器を、圧倒的な低コストで提供します。</p>
       </div>
-
+      
       <div class="pricing-badge-burst-global" data-aos="zoom-in">
         <div class="badge-bg"></div>
         <span>🔥</span> 今なら全プラン <strong>初月無料</strong> キャンペーン中！
       </div>
 
-      <div class="pricing-toggle-container" data-aos="fade-up">
-        <span class="toggle-label active" id="label-monthly">月額払い</span>
-        <label class="toggle-switch">
-          <input type="checkbox" id="pricing-toggle">
-          <span class="slider round"></span>
-        </label>
-        <span class="toggle-label" id="label-yearly">年額払い <span class="discount-badge">20% OFF🔥</span></span>
+      <div class="pricing-grid-modern">
+        <!-- Monthly Plan -->
+        <div class="pricing-card-modern" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-plan-header">
+            <h3>月額プラン</h3>
+            <p>まずはお試しで始めたい方へ</p>
+          </div>
+          <div class="price-display">
+            <span class="currency">¥</span>
+            <span class="number">2,980</span>
+            <span class="period">/月 (税込)</span>
+          </div>
+          <ul class="pricing-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 4ヶ国語AI自動翻訳</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 無制限の更新・プレビュー</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 独自サブドメイン対応</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> <strong>初月 ¥0 (トライアル)</strong></li>
+          </ul>
+          <button onclick="checkout('monthly')" class="btn btn-outline btn-lg btn-full">
+            月額で今すぐ始める
+          </button>
+        </div>
+
+        <!-- Annual Plan (Recommended) -->
+        <div class="pricing-card-modern featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="featured-label">1番人気！20% OFF</div>
+          <div class="pricing-plan-header">
+            <h3>年額払いプラン</h3>
+            <p>長期的に集客を最大化したい方へ</p>
+          </div>
+          <div class="price-display">
+            <div class="old-price">通常 ¥35,760</div>
+            <div class="current-price">
+              <span class="currency">¥</span>
+              <span class="number">28,600</span>
+              <span class="period">/年 (税込)</span>
+            </div>
+            <div class="price-note">実質月額 ¥2,383</div>
+          </div>
+          <ul class="pricing-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 全機能利用可能</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 優先サポート</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> <strong>¥7,160 お得！</strong></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> <strong>初月 ¥0 (トライアル)</strong></li>
+          </ul>
+          <button onclick="checkout('annual')" class="btn btn-primary btn-lg btn-full btn-glow-effect pulse-glow">
+            年額で今すぐ始める
+          </button>
+        </div>
       </div>
 
-      <div class="pricing-card-wrap" data-aos="fade-up" data-aos-delay="100">
-        <div class="pricing-card-rich">
-          <div class="featured-label-rich">スタンダードプラン</div>
-
-          <!-- 選択テーマ表示バッジ -->
-          <div class="pricing-theme-badge" id="pricingThemeBadge">
-            <span class="pricing-theme-badge-icon">🎨</span>
-            <span>選択中のテーマ：</span>
-            <strong id="pricingThemeName">Standard</strong>
-            <a id="pricingThemeDemoLink" href="/demo/theme1" target="_blank" class="pricing-theme-demo-link">デモを見る →</a>
+      <div class="pricing-footer text-center" data-aos="fade-up">
+        <p class="micro-text">
+          お支払いは世界基準の安全な「Stripe決済」をご利用いただけます。<br>
+          無料期間（30日間）終了後に課金が開始されます。期間内の解約で<strong>料金は一切かかりません。</strong>
+        </p>
+        <div class="payment-methods">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="height: 20px; opacity: 0.6; display: none;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" style="height: 12px; opacity: 0.6; margin: 0 10px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height: 20px; opacity: 0.6; margin: 0 10px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="Amex" style="height: 20px; opacity: 0.6; margin: 0 10px; display: none;">
+        </div>
+      </div>
+    </div>
+  </section>
+�ら世界中からアクセス可能なLPに。</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <!-- Left: Price Info -->
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="bg-gray">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">料金・プラン</span>
+        <h2>すべてが含まれた、<br /><span class="gradient-text">シンプルなワンプラン</span></h2>
+        <p class="section-description">初期費用無料でリスクなく導入。インバウンド集客の強力な武器を、圧倒的な低コストで。</p>
+      </div>
+      
+      <div class="pricing-card-modern" data-aos="zoom-in" data-aos-delay="100">
+        <div class="pricing-badge-burst">
+          <div class="badge-bg"></div>
+          <span>🔥</span> 初月完全無料！
+        </div>
+        
+        
+        <div class="pricing-toggle-container">
+          <span class="toggle-label active" id="label-monthly">月額払い</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="pricing-toggle">
+            <span class="slider round"></span>
+          </label>
+          <span class="toggle-label" id="label-yearly">年額払い <span class="discount-badge">20% OFF🔥</span></span>
+        </div>
+
+        <div class="pricing-layout">
           <div class="pricing-left">
-            <div class="pricing-plan-name">
-              <h3>スタンダード</h3>
-              <p>インバウンド集客に必要な機能をすべて含む</p>
-            </div>
+            <h3>スタンダードプラン</h3>
+            <p class="desc">多言語Web集客に必要なすべての機能を無制限で。</p>
+            
+            <div class="price-box">
+              <div class="price-initial">
+                <span>初期費用</span>
+                <span class="strike">¥50,000</span>     
+                <span class="val">¥0</span>
+              </div>        
+              
+              <!-- Monthly Pricing -->
+              <div class="price-display" id="price-monthly-display">
+                <span class="currency">¥</span>
+                <span class="number">2,980</span>       
+                <span class="period">/月 (税込)</span>
+              </div>        
 
-            <div class="pricing-initial-badge">
-              <span class="initial-label">初期費用</span>
-              <span class="initial-free">¥0</span>
-              <span class="initial-note">完全無料</span>
-            </div>
-
-            <!-- Monthly -->
-            <div class="price-amount-block" id="price-monthly-display">
-              <div class="price-main-row">
-                <span class="price-currency">¥</span>
-                <span class="price-number">2,980</span>
-                <span class="price-period">/月<small>（税込）</small></span>
+              <!-- Yearly Pricing -->
+              <div class="price-display hidden" id="price-yearly-display">
+                <div class="old-price">通常 ¥35,760</div>
+                <div class="current-price">
+                  <span class="currency">¥</span>
+                  <span class="number">28,600</span>       
+                  <span class="period">/年 (税込)</span>
+                </div>
+                <div class="savings">✨ 年間 ¥7,160 おトク！</div>
               </div>
-              <p class="price-sub-note">いつでも解約可能</p>
             </div>
-
-            <!-- Yearly -->
-            <div class="price-amount-block hidden" id="price-yearly-display">
-              <div class="yearly-original">
-                <span class="original-price">¥35,760</span>
-                <span class="yearly-off-badge">20% OFF</span>
-              </div>
-              <div class="price-main-row">
-                <span class="price-currency">¥</span>
-                <span class="price-number">28,600</span>
-                <span class="price-period">/年<small>（税込）</small></span>
-              </div>
-              <p class="yearly-savings">✨ 年間 ¥7,160 おトク！</p>
-            </div>
-
-            <a href="#" id="checkout-btn" class="btn btn-primary btn-full btn-pricing-cta btn-glow-effect">
-              今すぐ無料で始める
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            
+            <a href="#register" class="btn btn-primary btn-lg btn-full btn-glow-effect pulse-glow">
+              今すぐ無料で始める（安全なStripe決済）
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
-            <p class="pricing-guarantee">✓ クレジットカード不要で登録　✓ 1ヶ月間完全無料</p>
+            <p class="micro-text" style="color: var(--color-text-muted); margin-top: 1rem;">お支払いは世界基準の安全な「Stripe決済」をご利用いただけます。<br>無料お試し期間中に解約された場合、<strong style="color: #f87171;">料金は一切発生しません。</strong></p>
           </div>
-
-          <!-- Vertical Divider -->
-          <div class="pricing-divider"></div>
-
-          <!-- Right: Features -->
+          
           <div class="pricing-right">
-            <p class="features-title">含まれる機能</p>
-            <ul class="pricing-features-rich">
-              <li>
-                <span class="feat-check">✓</span>
-                <div class="feat-text">
-                  <strong>AIネイティブ自動翻訳</strong>
-                  <small>日・英・繁中・韓の4言語に一括翻訳</small>
-                </div>
-              </li>
-              <li>
-                <span class="feat-check">✓</span>
-                <div class="feat-text">
-                  <strong>プレミアムデザインテンプレート</strong>
-                  <small>飲食店特化の高品質レイアウト</small>
-                </div>
-              </li>
-              <li>
-                <span class="feat-check">✓</span>
-                <div class="feat-text">
-                  <strong>スマホ対応管理画面</strong>
-                  <small>いつでもどこでもスマホで更新</small>
-                </div>
-              </li>
-              <li>
-                <span class="feat-check">✓</span>
-                <div class="feat-text">
-                  <strong>サブドメイン提供</strong>
-                  <small>独自URLですぐに公開可能</small>
-                </div>
-              </li>
-              <li>
-                <span class="feat-check">✓</span>
-                <div class="feat-text">
-                  <strong>SEO自動最適化</strong>
-                  <small>各言語で検索エンジンにインデックス</small>
-                </div>
-              </li>
-              <li>
-                <span class="feat-check">✓</span>
-                <div class="feat-text">
-                  <strong>Googleマップ連動サポート</strong>
-                  <small>ビジネスプロフィールへのURL登録</small>
-                </div>
-              </li>
+            <h4>含まれる機能</h4>
+            <ul class="pricing-feature-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 日本語+英・繁・韓の4言語対応</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> 業界最高水準のAI自動翻訳</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> スマホ完全対応のプレミアムデザイン</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> リアルタイム更新システム (CMS)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> サブドメイン (global-reaches.com)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-9"/></svg> SSL対応・セキュリティ対策</li>
             </ul>
           </div>
         </div>
@@ -617,6 +493,7 @@
     </div>
   </section>
 
+  <!-- ===== FAQ ===== -->
   <section id="faq">
     <div class="container">
       <div class="section-header" data-aos="fade-up">

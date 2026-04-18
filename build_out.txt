@@ -1,0 +1,12 @@
+
+> vite-react-typescript-starter@0.0.0 build
+> astro build
+
+[2m07:01:39[22m [34m[content][39m Syncing content
+[2m07:01:40[22m [34m[content][39m Synced content
+[2m07:01:40[22m [34m[types][39m Generated [2m110ms[22m
+[2m07:01:40[22m [34m[build][39m output: [34m"static"[39m
+[2m07:01:40[22m [34m[build][39m mode: [34m"static"[39m
+[2m07:01:40[22m [34m[build][39m directory: [34mc:\Users\buyse\OneDrive\デスクトップ\Antigravity\lp-baseline-theme\project\dist\[39m
+[2m07:01:40[22m [34m[build][39m Collecting build info...
+[2m07:01:40[22m [34m[build][39m [32m✓ Completed in 372ms.[39m

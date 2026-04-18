@@ -220,17 +220,24 @@ window.selectTemplate = function(themeId) {
   }, 300);
 };
 
+const DEMO_URLS = {
+  theme1: '/demo/theme1',
+  theme2: '/demo/theme2',
+  theme3: '/demo/theme3',
+};
+
 function _applyTemplateSelection(themeId, showBar) {
   // カードのselectedクラスを切り替え
   document.querySelectorAll('.template-card').forEach(card => {
     card.classList.toggle('selected', card.dataset.theme === themeId);
   });
 
+  const name = TEMPLATE_NAMES[themeId] || themeId;
+
   // 選択バーを表示
   const bar = document.getElementById('templateSelectedBar');
   const barText = document.getElementById('templateSelectedText');
   if (bar && barText) {
-    const name = TEMPLATE_NAMES[themeId] || themeId;
     barText.textContent = `${name} テーマを選択しました。このまま下の料金セクションへ進んでください。`;
     if (showBar) {
       bar.classList.add('visible');
@@ -239,6 +246,16 @@ function _applyTemplateSelection(themeId, showBar) {
       const saved = localStorage.getItem('landy_selected_template');
       if (saved) bar.classList.add('visible');
     }
+  }
+
+  // 料金カードのテーマバッジを更新
+  const pricingThemeName = document.getElementById('pricingThemeName');
+  const pricingThemeDemoLink = document.getElementById('pricingThemeDemoLink');
+  if (pricingThemeName) {
+    pricingThemeName.textContent = name;
+  }
+  if (pricingThemeDemoLink) {
+    pricingThemeDemoLink.href = DEMO_URLS[themeId] || '/demo/theme1';
   }
 }
 

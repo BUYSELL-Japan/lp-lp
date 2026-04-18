@@ -1052,3 +1052,43 @@ input:checked + .slider:before {
 @media (max-width: 640px) {
   .template-selected-inner { flex-direction: column; text-align: center; }
 }
+
+/* --- Pricing: Selected Theme Badge --- */
+.pricing-theme-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0; /* カードの上部に密着 */
+  border-bottom: 2px solid rgba(2, 132, 199, 0.3);
+  flex-wrap: wrap;
+}
+.pricing-theme-badge-icon {
+  font-size: 1.2rem;
+}
+.pricing-theme-badge strong {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #38bdf8;
+  margin-right: 4px;
+}
+.pricing-theme-demo-link {
+  margin-left: auto;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-decoration: underline;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.pricing-theme-demo-link:hover {
+  color: #7dd3fc;
+}
+@media (max-width: 640px) {
+  .pricing-theme-badge { padding: 12px 20px; font-size: 0.85rem; }
+  .pricing-theme-demo-link { margin-left: 0; }
+}

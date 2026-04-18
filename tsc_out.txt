@@ -1,0 +1,34 @@
+src/components/ErrorBoundary.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/Footer.tsx(5,1): error TS6133: 'SectionError' is declared but its value is never read.
+src/components/Theme2StorePage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Theme3StorePage.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/ThemeGallery.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme2/About.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme2/Footer.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme2/Header.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme2/Hero.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme2/Hero.tsx(16,46): error TS2339: Property 'cta' does not exist on type 'HeroData'.
+src/components/themes/theme2/Menu.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme2/Menu.tsx(2,18): error TS6133: 'AnimatePresence' is declared but its value is never read.
+src/components/themes/theme2/Pricing.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme2/Pricing.tsx(3,17): error TS6133: 'Star' is declared but its value is never read.
+src/components/themes/theme3/About.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Access.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Company.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Contact.tsx(3,29): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/themes/theme3/CTA.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/FAQ.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Footer.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Gallery.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Gallery.tsx(1,27): error TS6133: 'useRef' is declared but its value is never read.
+src/components/themes/theme3/Header.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Hero.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Hero.tsx(73,25): error TS2339: Property 'cta' does not exist on type 'HeroData'.
+src/components/themes/theme3/Menu.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Menu.tsx(24,25): error TS2339: Property 'category' does not exist on type 'MenuItem'.
+src/components/themes/theme3/News.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Pricing.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Reviews.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/Staff.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/themes/theme3/StoreInfo.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/services/dataMapper.ts(405,18): error TS7006: Parameter 'img' implicitly has an 'any' type.
