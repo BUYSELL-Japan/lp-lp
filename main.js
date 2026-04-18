@@ -193,6 +193,7 @@ const TEMPLATE_NAMES = {
   theme1: 'Standard',
   theme2: 'Modern',
   theme3: 'Elegant',
+  theme4: 'Tropical',
 };
 
 // localStorage からテンプレートIDを復元（ページロード時）
@@ -224,6 +225,7 @@ const DEMO_URLS = {
   theme1: 'https://demo.global-reaches.com/theme1',
   theme2: 'https://demo.global-reaches.com/theme2',
   theme3: 'https://demo.global-reaches.com/theme3',
+  theme4: 'https://demo.global-reaches.com/theme4',
 };
 
 function _applyTemplateSelection(themeId, showBar) {
