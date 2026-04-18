@@ -221,9 +221,9 @@ window.selectTemplate = function(themeId) {
 };
 
 const DEMO_URLS = {
-  theme1: '/demo/theme1',
-  theme2: '/demo/theme2',
-  theme3: '/demo/theme3',
+  theme1: 'https://demo.global-reaches.com/theme1',
+  theme2: 'https://demo.global-reaches.com/theme2',
+  theme3: 'https://demo.global-reaches.com/theme3',
 };
 
 function _applyTemplateSelection(themeId, showBar) {
