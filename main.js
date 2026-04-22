@@ -271,14 +271,14 @@ function _applyTemplateSelection(themeId, showBar) {
     mockupImg.style.transform = 'scale(0.96)';
 
     setTimeout(() => {
-      // 画像読み込み後にフェードイン
+      // 先にonloadハンドラを設定する
       mockupImg.onload = () => {
         mockupImg.style.opacity = '1';
         mockupImg.style.transform = 'scale(1)';
         if (previewWindow) previewWindow.classList.remove('fade-out');
       };
 
-      mockupImg.src = `/images/${themeId}_mockup.png`;
+      mockupImg.src = `/images/${themeId}_mockup.jpg`;
       mockupImg.alt = `${name} Theme Mockup`;
 
       // fallback: 画像がキャッシュ済みの場合はonloadが発火しないことがある
