@@ -271,15 +271,16 @@ function _applyTemplateSelection(themeId, showBar) {
     mockupImg.style.transform = 'scale(0.96)';
 
     setTimeout(() => {
-      mockupImg.src = `/images/${themeId}_mockup.png`;
-      mockupImg.alt = `${name} Theme Mockup`;
-
       // 画像読み込み後にフェードイン
       mockupImg.onload = () => {
         mockupImg.style.opacity = '1';
         mockupImg.style.transform = 'scale(1)';
         if (previewWindow) previewWindow.classList.remove('fade-out');
       };
+
+      mockupImg.src = `/images/${themeId}_mockup.png`;
+      mockupImg.alt = `${name} Theme Mockup`;
+
       // fallback: 画像がキャッシュ済みの場合はonloadが発火しないことがある
       if (mockupImg.complete) {
         mockupImg.style.opacity = '1';
