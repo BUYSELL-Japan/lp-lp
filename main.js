@@ -222,10 +222,10 @@ window.selectTemplate = function(themeId) {
 };
 
 const DEMO_URLS = {
-  theme1: 'https://demo.global-reaches.com/theme1',
-  theme2: 'https://demo.global-reaches.com/theme2',
-  theme3: 'https://demo.global-reaches.com/theme3',
-  theme4: 'https://demo.global-reaches.com/theme4',
+  theme1: 'https://demo-standard.global-reaches.com',
+  theme2: 'https://demo-modern.global-reaches.com',
+  theme3: 'https://demo-elegant.global-reaches.com',
+  theme4: 'https://demo-tropical.global-reaches.com',
 };
 
 function _applyTemplateSelection(themeId, showBar) {
@@ -258,7 +258,7 @@ function _applyTemplateSelection(themeId, showBar) {
     pricingThemeName.textContent = name;
   }
   if (pricingThemeDemoLink) {
-    pricingThemeDemoLink.href = DEMO_URLS[themeId] || 'https://demo.global-reaches.com/theme1';
+    pricingThemeDemoLink.href = DEMO_URLS[themeId] || 'https://demo-standard.global-reaches.com';
   }
 
   // 4. モックアップ画像をフェードしながら切り替え
