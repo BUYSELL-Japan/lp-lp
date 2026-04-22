@@ -229,14 +229,14 @@ const DEMO_URLS = {
 };
 
 function _applyTemplateSelection(themeId, showBar) {
-  // カードのselectedクラスを切り替え
+  // 1. カードのselectedクラスを切り替え
   document.querySelectorAll('.template-card').forEach(card => {
     card.classList.toggle('selected', card.dataset.theme === themeId);
   });
 
   const name = TEMPLATE_NAMES[themeId] || themeId;
 
-  // 選択バーを表示
+  // 2. 選択バーの更新
   const bar = document.getElementById('templateSelectedBar');
   const barText = document.getElementById('templateSelectedText');
   if (bar && barText) {
@@ -244,20 +244,49 @@ function _applyTemplateSelection(themeId, showBar) {
     if (showBar) {
       bar.classList.add('visible');
     } else {
-      // ページロード時は保存済みなら表示
       const saved = localStorage.getItem('landy_selected_template');
       if (saved) bar.classList.add('visible');
     }
   }
 
-  // 料金カードのテーマバッジを更新
+  // 3. 料金カード内の情報を更新
   const pricingThemeName = document.getElementById('pricingThemeName');
   const pricingThemeDemoLink = document.getElementById('pricingThemeDemoLink');
+  const mockupImg = document.getElementById('pricingThemeMockup');
+
   if (pricingThemeName) {
     pricingThemeName.textContent = name;
   }
   if (pricingThemeDemoLink) {
-    pricingThemeDemoLink.href = DEMO_URLS[themeId] || '/demo/theme1';
+    pricingThemeDemoLink.href = DEMO_URLS[themeId] || 'https://demo.global-reaches.com/theme1';
+  }
+
+  // 4. モックアップ画像をフェードしながら切り替え
+  if (mockupImg) {
+    const previewWindow = mockupImg.closest('.theme-preview-window');
+
+    // フェードアウト
+    if (previewWindow) previewWindow.classList.add('fade-out');
+    mockupImg.style.opacity = '0';
+    mockupImg.style.transform = 'scale(0.96)';
+
+    setTimeout(() => {
+      mockupImg.src = `/images/${themeId}_mockup.png`;
+      mockupImg.alt = `${name} Theme Mockup`;
+
+      // 画像読み込み後にフェードイン
+      mockupImg.onload = () => {
+        mockupImg.style.opacity = '1';
+        mockupImg.style.transform = 'scale(1)';
+        if (previewWindow) previewWindow.classList.remove('fade-out');
+      };
+      // fallback: 画像がキャッシュ済みの場合はonloadが発火しないことがある
+      if (mockupImg.complete) {
+        mockupImg.style.opacity = '1';
+        mockupImg.style.transform = 'scale(1)';
+        if (previewWindow) previewWindow.classList.remove('fade-out');
+      }
+    }, 250);
   }
 }
 
