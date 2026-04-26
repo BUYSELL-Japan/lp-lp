@@ -722,41 +722,71 @@
 
   <!-- ===== FOOTER ===== -->
   <footer id="footer">
-    <div class="container">
-      <div class="footer-layout">
-        <div class="footer-brand">
-          <a href="#" class="logo">
-            <span class="logo-icon">L</span>
-            <span class="logo-text">Landy</span>
+    <!-- Glow orbs -->
+    <div class="footer-orb footer-orb-1"></div>
+    <div class="footer-orb footer-orb-2"></div>
+
+    <div class="container footer-inner-wrap">
+
+      <!-- Top: Brand + CTA -->
+      <div class="footer-top">
+        <div class="footer-brand-block">
+          <a href="#" class="footer-logo">
+            <span class="footer-logo-icon">L</span>
+            <span class="footer-logo-name">Landy</span>
           </a>
-          <p>Landy（ランディー）は、沖縄から生まれた、飲食店のインバウンド集客を支援する次世代の多言語LP制作・運用サービスです。</p>
-          <div class="social-links">
-            <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <p class="footer-tagline">沖縄から、世界へ届ける<br>次世代インバウンド集客LP</p>
+          <div class="footer-chips">
+            <span>🌐 多言語対応</span>
+            <span>🍽️ 飲食店特化</span>
+            <span>⚡ 即日公開</span>
           </div>
         </div>
-        
-        <div class="footer-menus">
-          <div class="footer-col">
-            <h4>サービス</h4>
-            <a href="#features">選ばれる理由</a>
-            <a href="#how-it-works">使い方・流れ</a>
-            <a href="#pricing">料金プラン</a>
-            <a href="#">導入事例</a>
-          </div>
-          <div class="footer-col">
-            <h4>運営情報</h4>
-            <a href="#" onclick="openModal('modal-company', event)">運営会社</a>
-            <a href="#" onclick="openModal('modal-tokushoho', event)">特定商取引法に基づく表記</a>
-            <a href="#" onclick="openModal('modal-tos', event)">利用規約</a>
-            <a href="#" onclick="openModal('modal-privacy', event)">プライバシーポリシー</a>
-          </div>
+
+        <div class="footer-cta-block">
+          <p class="footer-cta-label">まずは無料でお試し</p>
+          <a href="#pricing" class="btn btn-primary btn-lg footer-cta-btn">
+            今すぐ始める
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
         </div>
       </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2026 Neural Seed. All rights reserved.</p>
+
+      <!-- Separator -->
+      <div class="footer-sep"></div>
+
+      <!-- Middle: Nav links -->
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <h5>サービス</h5>
+          <a href="#features">選ばれる理由</a>
+          <a href="#how-it-works">使い方・流れ</a>
+          <a href="#pricing">料金プラン</a>
+          <a href="#templates">テンプレート</a>
+        </div>
+        <div class="footer-nav-col">
+          <h5>運営情報</h5>
+          <a href="#" onclick="openModal('modal-company', event)">運営会社</a>
+          <a href="#" onclick="openModal('modal-tokushoho', event)">特定商取引法に基づく表記</a>
+          <a href="#" onclick="openModal('modal-tos', event)">利用規約</a>
+          <a href="#" onclick="openModal('modal-privacy', event)">プライバシーポリシー</a>
+        </div>
+        <div class="footer-nav-col footer-nav-contact">
+          <h5>お問い合わせ</h5>
+          <p class="footer-contact-note">導入に関するご相談・ご質問は<br>お気軽にどうぞ</p>
+          <a href="#contact" class="footer-contact-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            お問い合わせフォーム
+          </a>
+        </div>
       </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copy">&copy; 2026 Neural Seed Inc. All rights reserved.</p>
+        <p class="footer-made">Made with ❤️ in Okinawa, Japan</p>
+      </div>
+
     </div>
   </footer>
 
