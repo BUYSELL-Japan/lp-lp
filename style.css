@@ -188,9 +188,9 @@ section { padding: var(--space-24) 0; position: relative; }
 .lang-bubbles { position: absolute; inset: 0; pointer-events: none; }
 .lang-bubble { position: absolute; display: flex; align-items: center; gap: var(--space-3); background: rgba(255, 255, 255, 0.95); padding: var(--space-3) var(--space-5); border-radius: var(--radius-full); box-shadow: var(--shadow-lg); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.8); font-weight: 700; font-size: var(--font-size-base); color: var(--color-text); animation: floatBubble 4s ease-in-out infinite; }
 .lang-bubble img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
-.lb-1 { top: 15%; right: -5%; animation-delay: 0s; }
-.lb-2 { bottom: 25%; right: -10%; animation-delay: 1.5s; }
-.lb-3 { bottom: 10%; left: -5%; animation-delay: 3s; }
+.lb-1 { top: 15%; right: 0%; animation-delay: 0s; }
+.lb-2 { bottom: 25%; right: 5%; animation-delay: 1.5s; }
+.lb-3 { bottom: 10%; left: 0%; animation-delay: 3s; }
 @keyframes floatBubble { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-10px) scale(1.05); } }
 
 
