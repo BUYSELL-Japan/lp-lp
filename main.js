@@ -339,3 +339,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// ====== Contact Form Submission ======
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('contact-submit-btn');
+  const messageEl = document.getElementById('contact-form-message');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // ボタンをローディング状態にする
+      submitBtn.style.pointerEvents = 'none';
+      submitBtn.style.opacity = '0.7';
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '送信中...';
+      
+      try {
+        const name = document.getElementById('contact-name').value;
+        const email = document.getElementById('contact-email').value;
+        const message = document.getElementById('contact-message').value;
+        const website = document.getElementById('contact-website').value; // Honeypot
+
+        // LP-Contact-API のURL
+        const API_URL = "https://t8hdhfyzn7.execute-api.ap-southeast-2.amazonaws.com/prod/contact";
+
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            subject: "【Landy公式LP】お問い合わせ",
+            message: message,
+            website: website,
+            targetEmail: "info@neuralseed.tech"
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error("ネットワークエラーが発生しました");
+        }
+        
+        // 成功メッセージを表示
+        messageEl.style.display = 'block';
+        contactForm.reset();
+        
+        // 5秒後にメッセージを隠す
+        setTimeout(() => {
+          messageEl.style.display = 'none';
+        }, 5000);
+      } catch (error) {
+        console.error("Submission error:", error);
+        alert("エラーが発生しました。時間をおいて再度お試しください。");
+      } finally {
+        // ボタンを元に戻す
+        submitBtn.innerHTML = originalText;
+        submitBtn.style.pointerEvents = 'auto';
+        submitBtn.style.opacity = '1';
+      }
+    });
+  }
+});
