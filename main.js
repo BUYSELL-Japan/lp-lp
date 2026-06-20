@@ -194,7 +194,7 @@ const TEMPLATE_NAMES = {
   theme2: 'Modern',
   theme3: 'Elegant',
   theme4: 'Tropical',
-  theme5: 'Luxury',
+  theme5: 'Dining',
 };
 
 // localStorage からテンプレートIDを復元（ページロード時）
