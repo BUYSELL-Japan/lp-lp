@@ -1637,6 +1637,7 @@ input:checked + .slider:before {
 .template-badge-dark { background: #1e293b; }
 .template-badge-gold { background: linear-gradient(135deg, #92400e, #b45309); }
 .template-badge-tropical { background: linear-gradient(135deg, #dc2626, #fbbf24); }
+.template-badge-luxury   { background: linear-gradient(135deg, #1a1a1a, #C0392B); border: 1px solid #D4AF37; }
 
 /* --- Mini Preview mockup --- */
 .template-preview {
