@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Mockup Adjuster</title>
+  <style>
+    body { background: #333; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+    #canvas-container { position: relative; width: 1024px; height: 1024px; background: url('images/theme1_mockup.jpg') no-repeat; border: 2px solid #555; }
+    .draggable { position: absolute; cursor: move; opacity: 0.8; }
+    .draggable:hover { opacity: 1; outline: 2px dashed #00ff00; }
+    .controls { margin-top: 20px; background: #222; padding: 15px; border-radius: 8px; text-align: center; }
+    input[type=number] { width: 60px; margin: 0 5px; }
+  </style>
+</head>
+<body>
+  <h2>Mockup Adjuster</h2>
+  <p>Drag the desktop and mobile screenshots to align perfectly with the frames, or use the controls below to resize/move.</p>
+  
+  <div id="canvas-container">
+    <img id="desktop" src="images/theme5_desktop.png" class="draggable" style="left: 91px; top: 228px; width: 675px; height: 425px;" />
+    <img id="mobile" src="images/theme5_mobile.png" class="draggable" style="left: 742px; top: 407px; width: 180px; height: 390px;" />
+  </div>
+
+  <div class="controls">
+    <h3>Desktop</h3>
+    X: <input type="number" id="dx" value="91">
+    Y: <input type="number" id="dy" value="228">
+    W: <input type="number" id="dw" value="675">
+    H: <input type="number" id="dh" value="425">
+    
+    <h3>Mobile</h3>
+    X: <input type="number" id="mx" value="742">
+    Y: <input type="number" id="my" value="407">
+    W: <input type="number" id="mw" value="180">
+    H: <input type="number" id="mh" value="390">
+  </div>
+
+  <div class="controls" style="margin-top: 10px;">
+    <strong>Please copy these values and paste them to Antigravity:</strong>
+    <br>
+    <textarea id="result" rows="4" cols="50" style="margin-top:10px;" readonly></textarea>
+  </div>
+
+  <script>
+    function makeDraggable(el, prefix) {
+      let isDragging = false;
+      let startX, startY, initialLeft, initialTop;
+
+      el.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        initialLeft = parseInt(el.style.left, 10);
+        initialTop = parseInt(el.style.top, 10);
+        e.preventDefault();
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        el.style.left = (initialLeft + dx) + 'px';
+        el.style.top = (initialTop + dy) + 'px';
+        updateInputs();
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+    }
+
+    const desktop = document.getElementById('desktop');
+    const mobile = document.getElementById('mobile');
+    
+    makeDraggable(desktop, 'd');
+    makeDraggable(mobile, 'm');
+
+    const inputs = ['dx', 'dy', 'dw', 'dh', 'mx', 'my', 'mw', 'mh'];
+    
+    function updateInputs() {
+      document.getElementById('dx').value = parseInt(desktop.style.left, 10);
+      document.getElementById('dy').value = parseInt(desktop.style.top, 10);
+      document.getElementById('dw').value = parseInt(desktop.style.width, 10);
+      document.getElementById('dh').value = parseInt(desktop.style.height, 10);
+      
+      document.getElementById('mx').value = parseInt(mobile.style.left, 10);
+      document.getElementById('my').value = parseInt(mobile.style.top, 10);
+      document.getElementById('mw').value = parseInt(mobile.style.width, 10);
+      document.getElementById('mh').value = parseInt(mobile.style.height, 10);
+      updateResult();
+    }
+    
+    function applyInputs() {
+      desktop.style.left = document.getElementById('dx').value + 'px';
+      desktop.style.top = document.getElementById('dy').value + 'px';
+      desktop.style.width = document.getElementById('dw').value + 'px';
+      desktop.style.height = document.getElementById('dh').value + 'px';
+      
+      mobile.style.left = document.getElementById('mx').value + 'px';
+      mobile.style.top = document.getElementById('my').value + 'px';
+      mobile.style.width = document.getElementById('mw').value + 'px';
+      mobile.style.height = document.getElementById('mh').value + 'px';
+      updateResult();
+    }
+    
+    inputs.forEach(id => {
+      document.getElementById(id).addEventListener('input', applyInputs);
+    });
+
+    function updateResult() {
+      const dx = document.getElementById('dx').value;
+      const dy = document.getElementById('dy').value;
+      const dw = document.getElementById('dw').value;
+      const dh = document.getElementById('dh').value;
+      
+      const mx = document.getElementById('mx').value;
+      const my = document.getElementById('my').value;
+      const mw = document.getElementById('mw').value;
+      const mh = document.getElementById('mh').value;
+      
+      document.getElementById('result').value = `Desktop: left=${dx}, top=${dy}, width=${dw}, height=${dh}\nMobile: left=${mx}, top=${my}, width=${mw}, height=${mh}`;
+    }
+    
+    updateResult();
+  </script>
+</body>
+</html>

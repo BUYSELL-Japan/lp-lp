@@ -227,7 +227,7 @@ const DEMO_URLS = {
   theme2: 'https://demo-modern.global-reaches.com',
   theme3: 'https://demo-elegant.global-reaches.com',
   theme4: 'https://demo-tropical.global-reaches.com',
-  theme5: 'https://demo-dining.global-reaches.com',
+  theme5: 'https://demo.global-reaches.com/theme5',
 };
 
 function _applyTemplateSelection(themeId, showBar) {
