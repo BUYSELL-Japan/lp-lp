@@ -536,11 +536,11 @@ section { padding: var(--space-24) 0; position: relative; }
     height: 100%;
     object-fit: cover;
     object-position: top;
-    transition: object-position 6s ease-in-out;
+    transition: transform 0.3s ease;
   }
   
 .template-card:hover .template-mockup-img {
-    object-position: bottom;
+    transform: scale(1.02);
   }
 
 /* ========================================
