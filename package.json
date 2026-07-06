@@ -13,7 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "vite": "^8.0.2"
+    "vite": "^5.4.0"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

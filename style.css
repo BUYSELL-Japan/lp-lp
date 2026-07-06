@@ -2274,6 +2274,147 @@ input:checked + .slider:before {
 }
 
 /* ==============================
+   買い切りモデル リニューアル 追加スタイル
+   ============================== */
+
+/* --- Pain Points: 4カードグリッド --- */
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+}
+.pain-grid .pain-card:hover {
+  transform: translateY(-4px);
+}
+
+/* --- Solution: AI検索対応 チャット風モック --- */
+.ai-search-mock {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.ai-chat-question {
+  background: var(--color-bg);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+.ai-chat-answer {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: var(--color-white);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+}
+.ai-answer-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+.ai-chat-answer p { margin: 0 0 10px; font-size: var(--font-size-sm); line-height: 1.6; }
+.ai-chat-store-tag {
+  display: inline-flex;
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* --- Process (制作の流れ) --- */
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-12);
+}
+.process-step {
+  flex: 1;
+  text-align: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-5);
+}
+.process-icon { font-size: 2.5rem; margin-bottom: var(--space-3); }
+.process-step-num {
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+.process-step h3 { font-size: var(--font-size-lg); font-weight: 800; margin-bottom: var(--space-2); }
+.process-step p { font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.7; margin: 0; }
+.process-connector {
+  width: 40px;
+  height: 2px;
+  background: var(--color-border);
+  margin-top: 60px;
+  flex-shrink: 0;
+}
+
+/* --- Pricing: 単一プランカード --- */
+.plan-card-single {
+  align-items: center;
+  text-align: center;
+  background: var(--color-white);
+  border: 2px solid var(--color-primary);
+  border-radius: 28px;
+  padding: 40px 32px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.plan-card-single .plan-price-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.plan-card-single .plan-amount { justify-content: center; }
+.plan-card-single .plan-currency,
+.plan-card-single .plan-num { color: var(--color-text); }
+.plan-card-single .plan-tax { color: var(--color-text-secondary); }
+.plan-card-single .btn-plan-cta {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  width: 100%;
+  max-width: 320px;
+  margin-top: 20px;
+  padding-top: 15px;
+  box-shadow: 0 8px 24px rgba(2,132,199,0.3);
+}
+.plan-card-single .btn-plan-cta:hover {
+  box-shadow: 0 12px 32px rgba(2,132,199,0.45);
+  transform: translateY(-2px);
+}
+.plan-photo-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: 16px;
+  text-align: left;
+}
+.plan-photo-note svg { flex-shrink: 0; color: var(--color-primary); }
+
+/* ==============================
    レスポンシブ対応
    ============================== */
 @media (max-width: 768px) {
@@ -2289,4 +2430,11 @@ input:checked + .slider:before {
   .about-us-card {
     padding: var(--space-6);
   }
+
+  .pain-grid { grid-template-columns: 1fr; }
+
+  .process-steps { flex-direction: column; }
+  .process-connector { width: 2px; height: 24px; margin: 0 auto; }
+
+  .plan-card-single { padding: 32px 20px; }
 }
