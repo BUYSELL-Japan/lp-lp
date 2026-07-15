@@ -2546,9 +2546,20 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 640px) {
-  .answer-facts-table table { font-size: 0.8125rem; }
+  .answer-facts-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: var(--space-6) calc(var(--space-4) * -1);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .answer-facts-table table { 
+    font-size: 0.875rem;
+    min-width: 500px;
+  }
   .answer-facts-table th,
-  .answer-facts-table td { padding: 10px 12px; }
+  .answer-facts-table td { padding: 12px 16px; }
 }
 
 /* --- FAQ details/summary形式 (AIOクローラー対応) --- */

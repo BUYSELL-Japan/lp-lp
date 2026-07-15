@@ -1,4 +1,4 @@
-// ===================================
+﻿// ===================================
 // Landy LP - Rich Interactions
 // ===================================
 
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
             subject: "【Landy公式LP】お問い合わせ",
             message: message,
             website: website,
-            targetEmail: "info@neuralseed.tech"
+            targetEmail: "hello@neural-seeds.com"
           })
         });
 
