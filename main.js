@@ -226,3 +226,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// --- FAQ show-more toggle ---
+// faq-extraはHTML上は常に存在しAIクローラーが読める。
+// 視覚的にのみJSで初期折りたたみし、ボタンで展開する。
+(function initFaqExtra() {
+  const extra = document.getElementById('faqExtra');
+  if (!extra) return;
+  // max-heightを実際の高さにセットしてからcollapseしないと、CSSアニメが壊れる
+  // 初期はただちにcollapsed
+  extra.style.maxHeight = '0px';
+  extra.classList.add('collapsed');
+})();
+
+window.toggleFaqMore = function() {
+  const extra = document.getElementById('faqExtra');
+  const btn   = document.getElementById('faqMoreBtn');
+  const trigger = document.getElementById('faqMoreTrigger');
+  if (!extra || !btn) return;
+
+  if (extra.classList.contains('collapsed')) {
+    // 展開
+    extra.classList.remove('collapsed');
+    extra.style.maxHeight = extra.scrollHeight + 'px';
+    btn.classList.add('expanded');
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg> 閉じる';
+    // 展開後はmax-heightをnoneにして中のdetailsが開けるようにする
+    extra.addEventListener('transitionend', () => {
+      if (!extra.classList.contains('collapsed')) extra.style.maxHeight = 'none';
+    }, { once: true });
+  } else {
+    // 折りたたみ
+    extra.style.maxHeight = extra.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      extra.style.maxHeight = '0px';
+      extra.classList.add('collapsed');
+    });
+    btn.classList.remove('expanded');
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg> もっと見る（残り8問）';
+  }
+};

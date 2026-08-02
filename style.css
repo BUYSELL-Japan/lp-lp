@@ -2473,6 +2473,69 @@ input:checked + .slider:before {
   border-bottom: 1px solid var(--color-border);
 }
 
+/* ---- answer-details-block (折りたたみブロック) ---- */
+.answer-details-block {
+  margin-top: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.answer-details-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  list-style: none;
+  user-select: none;
+}
+.answer-details-toggle::-webkit-details-marker { display: none; }
+
+.toggle-label-close { display: none; }
+.answer-details-block[open] .toggle-label-open { display: none; }
+.answer-details-block[open] .toggle-label-close { display: inline; }
+.answer-details-block[open] .toggle-chevron { transform: rotate(180deg); }
+.toggle-chevron { transition: transform 0.25s ease; flex-shrink: 0; margin-left: auto; }
+
+.answer-details-body {
+  padding: 0 var(--space-6) var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---- FAQ show-more controls ---- */
+.faq-more-trigger {
+  text-align: center;
+  padding: var(--space-6) 0 var(--space-2);
+}
+
+.btn-faq-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  min-height: 44px;
+}
+.btn-faq-more:hover { background: var(--color-primary); color: #fff; }
+.btn-faq-more svg { transition: transform 0.25s; }
+.btn-faq-more.expanded svg { transform: rotate(180deg); }
+
+/* faq-extra: HTML上は常に存在しクローラーが読める。視覚的にはJS制御で初期非表示 */
+.faq-extra { overflow: hidden; transition: max-height 0.4s ease; }
+.faq-extra.collapsed { max-height: 0; }
+
 .answer-first-inner {
   max-width: 860px;
   margin: 0 auto;
