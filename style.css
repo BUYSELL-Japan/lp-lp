@@ -2541,6 +2541,20 @@ input:checked + .slider:before {
   margin: 0 auto;
 }
 
+/* 統合セクション内のサブヘッダー余白 */
+.unified-solution-header {
+  margin-top: var(--space-20);
+  padding-top: var(--space-12);
+  border-top: 1px solid var(--color-border);
+}
+
+/* 統合セクション内の比較カード余白 */
+.unified-compare {
+  margin-top: var(--space-16);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
 .answer-first-inner h2 {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 800;
