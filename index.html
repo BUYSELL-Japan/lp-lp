@@ -41,136 +41,204 @@
 
   <!-- 構造化データ (JSON-LD): Organization -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Neural Seed",
-    "alternateName": "ニューラルシード",
-    "url": "https://webdesign.neural-seeds.com/",
-    "logo": "https://webdesign.neural-seeds.com/images/ogp.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "牧志2丁目17-27",
-      "addressLocality": "那覇市",
-      "addressRegion": "沖縄県",
-      "postalCode": "900-0013",
-      "addressCountry": "JP"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "hello@neural-seeds.com",
-      "contactType": "customer service",
-      "availableLanguage": "Japanese"
-    }
-  }
-  </script>
-
-  <!-- 構造化データ (JSON-LD): Service -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "多言語ホームページ制作代行サービス",
-    "name": "Landy",
-    "alternateName": "ランディー",
-    "description": "飲食店向けに英語・韓国語・繁体中文の多言語ホームページを制作代行するサービス。日本語ページを含む4言語で、Google検索にもAI検索にも対応したページを買い切り¥49,800（税込）で制作。",
-    "areaServed": "JP",
-    "offers": {
-      "@type": "Offer",
-      "name": "ベーシックプラン",
-      "price": "49800",
-      "priceCurrency": "JPY",
-      "description": "3言語（英語・韓国語・繁体中文）＋日本語ページの制作、SEOメタタグ自動生成、Googleマップ埋め込み、レスポンシブ対応、公開後6ヶ月間の修正サポート込み。買い切り・一括払い。"
-    },
-    "provider": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "Organization",
-      "name": "Neural Seed"
-    }
-  }
-  </script>
-
-  <!-- 構造化データ (JSON-LD): FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "制作期間はどのくらいですか？", "acceptedAnswer": { "@type": "Answer", "text": "通常、お申し込みから1〜2週間で公開まで完了します。内容の確認・修正のやり取りによって多少前後する場合があります。" } },
-      { "@type": "Question", "name": "写真は自分で用意する必要がありますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、お手持ちの写真をお送りください。スマートフォンで撮影した写真で十分です。Instagramなどに既に投稿されている写真でも問題ございません。" } },
-      { "@type": "Question", "name": "公開後に内容を変更できますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、公開後6ヶ月間は修正対応をいたします。メニューの変更や営業時間の更新など、お気軽にご相談ください。6ヶ月経過後は月額の保守プラン（準備中）へのご案内、または都度のご相談も可能です。" } },
-      { "@type": "Question", "name": "日本語のページも作れますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、英語・韓国語・繁体中文の3言語に加え、日本語ページも含めた計4言語で制作いたします。" } },
-      { "@type": "Question", "name": "一般的な制作会社に頼むといくらかかりますか？", "acceptedAnswer": { "@type": "Answer", "text": "一般的なWeb制作会社に多言語対応のホームページを依頼すると、制作費だけで20万円〜30万円以上かかるケースがほとんどです。Landyは3言語ページ制作・SEO設定・Googleマップ埋め込みまですべて含めて買い切り49,800円（税込）で承っております。" } },
-      { "@type": "Question", "name": "49,800円に含まれない追加費用はありますか？", "acceptedAnswer": { "@type": "Answer", "text": "ありません。3言語（日本語含む4言語）でのページ制作・SEOメタタグ自動生成・Googleマップ埋め込み・スマホ対応・公開後6ヶ月間の修正サポートまで、すべて49,800円（税込）に含まれています。" } },
-      { "@type": "Question", "name": "Google翻訳などの無料翻訳ツールと何が違うのですか？", "acceptedAnswer": { "@type": "Answer", "text": "最大の違いは、検索エンジンに外国語のページとして認識されるかどうかです。Google翻訳などのブラウザ翻訳は、日本語ページをその場で置き換えて表示するだけなので、外国人のお客様が母国語で検索しても、あなたのお店は検索結果に表示されません。Landyは英語・韓国語・繁体中文それぞれの独立したページを制作するため、各言語の検索結果に表示されやすくなります。" } },
-      { "@type": "Question", "name": "何ヶ国語に対応していますか？", "acceptedAnswer": { "@type": "Answer", "text": "英語・韓国語・繁体中文（台湾・香港向け）の3言語に、日本語ページを加えた計4言語に対応しています。" } },
-      { "@type": "Question", "name": "独自ドメインは使えますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、対応しております。すでにお持ちの独自ドメインをご希望の場合も設定をサポートいたしますので、お気軽にご相談ください。" } },
-      { "@type": "Question", "name": "AI検索対応とは具体的にどんな対策ですか？", "acceptedAnswer": { "@type": "Answer", "text": "ChatGPTやGoogleのAI検索であなたのお店が紹介されやすくなるよう、店舗情報を検索エンジンやAIが正しく理解できる形で整える対策です。次世代の集客チャネルにも備えることができます。" } },
-      { "@type": "Question", "name": "沖縄以外の飲食店でも利用できますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、全国どこからでもご利用いただけます。沖縄の飲食店が抱えるインバウンド対応の課題から生まれたサービスですが、東京・大阪・京都・北海道など、インバウンド旅行者が多い地域の飲食店にも同様にご活用いただけます。" } },
-      { "@type": "Question", "name": "公開後の修正サポートはいつまで、どこに相談すればいいですか？", "acceptedAnswer": { "@type": "Answer", "text": "公開後6ヶ月間は無料で修正対応いたします。ご相談はLINE公式アカウントまたはお問い合わせフォームから承っております。" } }
-    ]
-  }
-  </script>
-
-  <!-- 構造化データ (JSON-LD): WebPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Landy（ランディー）| 飲食店向け多言語ホームページ制作サービス（買い切り¥49,800）",
-    "description": "外国人観光客に見つけてもらうための多言語ホームページを制作代行。英語・韓国語・繁体中文の3言語ページを買い切り¥49,800（税込）で制作します。",
-    "url": "https://webdesign.neural-seeds.com/",
-    "inLanguage": "ja",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Neural Seed"
-    }
-  }
-  </script>
-
-  <!-- 構造化データ (JSON-LD): HowTo — 制作の流れ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Landyで飲食店の多言語ホームページを制作する方法",
-    "description": "飲食店の英語・韓国語・繁体中文の多言語ページをLandyで制作し、外国人観光客にGoogle検索・AI検索でお店を見つけてもらえる状態にするまでの手順。",
-    "totalTime": "P14D",
-    "estimatedCost": {
-      "@type": "MonetaryAmount",
-      "currency": "JPY",
-      "value": "49800"
-    },
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "お問い合わせ・ヒアリング",
-        "text": "LINEまたはお問い合わせフォームからご相談いただきます。メニュー・お店の特徴・こだわりをお聞きし、制作の方向性を決めます。",
-        "url": "https://webdesign.neural-seeds.com/#process"
+      "name": "Neural Seed",
+      "alternateName": "ニューラルシード",
+      "url": "https://webdesign.neural-seeds.com/",
+      "logo": "https://webdesign.neural-seeds.com/images/ogp.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "牧志2丁目17-27",
+        "addressLocality": "那覇市",
+        "addressRegion": "沖縄県",
+        "postalCode": "900-0013",
+        "addressCountry": "JP"
       },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "デザイン・制作",
-        "text": "ヒアリング内容をもとに、英語・韓国語・繁体中文の3言語ページを制作します。制作期間は通常1〜2週間です。",
-        "url": "https://webdesign.neural-seeds.com/#process"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "確認・修正",
-        "text": "完成したページの内容をご確認ください。修正は2回まで無料で対応いたします。",
-        "url": "https://webdesign.neural-seeds.com/#process"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "公開",
-        "text": "日本語を含む4言語ページを一斉公開します。公開後6ヶ月間の修正サポートも付いています。",
-        "url": "https://webdesign.neural-seeds.com/#process"
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@neural-seeds.com",
+        "contactType": "customer service",
+        "availableLanguage": "Japanese"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "多言語ホームページ制作代行サービス",
+      "name": "Landy",
+      "alternateName": "ランディー",
+      "description": "飲食店向けに英語・韓国語・繁体中文の多言語ホームページを制作代行するサービス。日本語ページを含む4言語で、Google検索にもAI検索にも対応したページを買い切り¥49,800（税込）で制作。",
+      "areaServed": "JP",
+      "offers": {
+        "@type": "Offer",
+        "name": "ベーシックプラン",
+        "price": "49800",
+        "priceCurrency": "JPY",
+        "description": "3言語（英語・韓国語・繁体中文）＋日本語ページの制作、SEOメタタグ自動生成、Googleマップ埋め込み、レスポンシブ対応、公開後6ヶ月間の修正サポート込み。買い切り・一括払い。"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Neural Seed"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "制作期間はどのくらいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "通常、お申し込みから1〜2週間で公開まで完了します。内容の確認・修正のやり取りによって多少前後する場合があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "写真は自分で用意する必要がありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、お手持ちの写真をお送りください。スマートフォンで撮影した写真で十分です。Instagramなどに既に投稿されている写真でも問題ございません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "公開後に内容を変更できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、公開後6ヶ月間は修正対応をいたします。メニューの変更や営業時間の更新など、お気軽にご相談ください。6ヶ月経過後は月額の保守プラン（準備中）へのご案内、または都度のご相談も可能です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "日本語のページも作れますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、英語・韓国語・繁体中文の3言語に加え、日本語ページも含めた計4言語で制作いたします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一般的な制作会社に頼むといくらかかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一般的なWeb制作会社に多言語対応のホームページを依頼すると、制作費だけで20万円〜30万円以上かかるケースがほとんどです。Landyは3言語ページ制作・SEO設定・Googleマップ埋め込みまですべて含めて買い切り49,800円（税込）で承っております。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "49,800円に含まれない追加費用はありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ありません。3言語（日本語含む4言語）でのページ制作・SEOメタタグ自動生成・Googleマップ埋め込み・スマホ対応・公開後6ヶ月間の修正サポートまで、すべて49,800円（税込）に含まれています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Google翻訳などの無料翻訳ツールと何が違うのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "最大の違いは、検索エンジンに外国語のページとして認識されるかどうかです。Google翻訳などのブラウザ翻訳は、日本語ページをその場で置き換えて表示するだけなので、外国人のお客様が母国語で検索しても、あなたのお店は検索結果に表示されません。Landyは英語・韓国語・繁体中文それぞれの独立したページを制作するため、各言語の検索結果に表示されやすくなります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "何ヶ国語に対応していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "英語・韓国語・繁体中文（台湾・香港向け）の3言語に、日本語ページを加えた計4言語に対応しています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "独自ドメインは使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、対応しております。すでにお持ちの独自ドメインをご希望の場合も設定をサポートいたしますので、お気軽にご相談ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AI検索対応とは具体的にどんな対策ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ChatGPTやGoogleのAI検索であなたのお店が紹介されやすくなるよう、店舗情報を検索エンジンやAIが正しく理解できる形で整える対策です。次世代の集客チャネルにも備えることができます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "沖縄以外の飲食店でも利用できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、全国どこからでもご利用いただけます。沖縄の飲食店が抱えるインバウンド対応の課題から生まれたサービスですが、東京・大阪・京都・北海道など、インバウンド旅行者が多い地域の飲食店にも同様にご活用いただけます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "公開後の修正サポートはいつまで、どこに相談すればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "公開後6ヶ月間は無料で修正対応いたします。ご相談はLINE公式アカウントまたはお問い合わせフォームから承っております。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Landy（ランディー）| 飲食店向け多言語ホームページ制作サービス（買い切り¥49,800）",
+      "description": "外国人観光客に見つけてもらうための多言語ホームページを制作代行。英語・韓国語・繁体中文の3言語ページを買い切り¥49,800（税込）で制作します。",
+      "url": "https://webdesign.neural-seeds.com/",
+      "inLanguage": "ja",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Neural Seed"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Landyで飲食店の多言語ホームページを制作する方法",
+      "description": "飲食店の英語・韓国語・繁体中文の多言語ページをLandyで制作し、外国人観光客にGoogle検索・AI検索でお店を見つけてもらえる状態にするまでの手順。",
+      "totalTime": "P14D",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "JPY",
+        "value": "49800"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "お問い合わせ・ヒアリング",
+          "text": "LINEまたはお問い合わせフォームからご相談いただきます。メニュー・お店の特徴・こだわりをお聞きし、制作の方向性を決めます。",
+          "url": "https://webdesign.neural-seeds.com/#process"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "デザイン・制作",
+          "text": "ヒアリング内容をもとに、英語・韓国語・繁体中文の3言語ページを制作します。制作期間は通常1〜2週間です。",
+          "url": "https://webdesign.neural-seeds.com/#process"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "確認・修正",
+          "text": "完成したページの内容をご確認ください。修正は2回まで無料で対応いたします。",
+          "url": "https://webdesign.neural-seeds.com/#process"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "公開",
+          "text": "日本語を含む4言語ページを一斉公開します。公開後6ヶ月間の修正サポートも付いています。",
+          "url": "https://webdesign.neural-seeds.com/#process"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
