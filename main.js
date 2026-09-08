@@ -193,15 +193,15 @@ document.addEventListener('DOMContentLoaded', () => {
     card.classList.toggle('selected', card.dataset.theme === savedTheme);
   });
 
-  const checkoutBtn = document.getElementById('checkout-btn');
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', async (e) => {
+  const checkoutBtns = document.querySelectorAll('#checkout-btn, .checkout-btn-class');
+  checkoutBtns.forEach(btn => {
+    btn.addEventListener('click', async (e) => {
       e.preventDefault();
       
-      checkoutBtn.style.pointerEvents = 'none';
-      checkoutBtn.style.opacity = '0.7';
-      const originalText = checkoutBtn.innerHTML;
-      checkoutBtn.innerHTML = '処理中... <div class="spinner"></div>';
+      btn.style.pointerEvents = 'none';
+      btn.style.opacity = '0.7';
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '処理中... <div class="spinner"></div>';
       
       try {
         const templateId = window.getSelectedTemplate();
@@ -215,12 +215,12 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (error) {
         console.error("Transition error:", error);
         alert("エラーが発生しました。");
-        checkoutBtn.innerHTML = originalText;
-        checkoutBtn.style.pointerEvents = 'auto';
-        checkoutBtn.style.opacity = '1';
+        btn.innerHTML = originalText;
+        btn.style.pointerEvents = 'auto';
+        btn.style.opacity = '1';
       }
     });
-  }
+  });
 });
 
 // ====== Contact Form Submission ======
