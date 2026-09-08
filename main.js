@@ -162,6 +162,67 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// ====== Template Selection & Checkout ======
+window.selectTemplate = function(themeId) {
+  localStorage.setItem('landy_selected_template', themeId);
+  
+  // Highlight selected card
+  document.querySelectorAll('.template-card').forEach(card => {
+    card.classList.toggle('selected', card.dataset.theme === themeId);
+  });
+
+  // Scroll to pricing
+  setTimeout(() => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      const headerHeight = document.getElementById('header')?.offsetHeight || 0;
+      const top = pricingSection.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }, 300);
+};
+
+window.getSelectedTemplate = function() {
+  return localStorage.getItem('landy_selected_template') || 'theme1';
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize template selection visual state
+  const savedTheme = window.getSelectedTemplate();
+  document.querySelectorAll('.template-card').forEach(card => {
+    card.classList.toggle('selected', card.dataset.theme === savedTheme);
+  });
+
+  const checkoutBtn = document.getElementById('checkout-btn');
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      
+      checkoutBtn.style.pointerEvents = 'none';
+      checkoutBtn.style.opacity = '0.7';
+      const originalText = checkoutBtn.innerHTML;
+      checkoutBtn.innerHTML = '処理中... <div class="spinner"></div>';
+      
+      try {
+        const templateId = window.getSelectedTemplate();
+        const planType = 'monthly';
+        
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const registerBaseUrl = isLocal ? 'http://localhost:5173' : 'https://register.global-reaches.com'; 
+        
+        const redirectUrl = `${registerBaseUrl}/?theme=${templateId}&plan=${planType}`;
+        window.location.href = redirectUrl;
+      } catch (error) {
+        console.error("Transition error:", error);
+        alert("エラーが発生しました。");
+        checkoutBtn.innerHTML = originalText;
+        checkoutBtn.style.pointerEvents = 'auto';
+        checkoutBtn.style.opacity = '1';
+      }
+    });
+  }
+});
+
 // ====== Contact Form Submission ======
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
