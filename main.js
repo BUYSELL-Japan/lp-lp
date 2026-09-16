@@ -192,9 +192,9 @@ window.getReferralCode = function() {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Capture ?ref=<referral code> from the URL and persist it across the session
-  const refCode = new URLSearchParams(window.location.search).get('ref');
-  if (refCode) {
-    localStorage.setItem('landy_ref_code', refCode);
+  const incomingRefCode = new URLSearchParams(window.location.search).get('ref');
+  if (incomingRefCode) {
+    localStorage.setItem('landy_ref_code', incomingRefCode);
   }
 
   // Initialize template selection visual state
