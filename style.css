@@ -1655,6 +1655,12 @@ input:checked + .slider:before {
 .template-badge-gold { background: linear-gradient(135deg, #92400e, #b45309); }
 .template-badge-tropical { background: linear-gradient(135deg, #dc2626, #fbbf24); }
 .template-badge-dining   { background: linear-gradient(135deg, #c2410c, #ea580c); }
+.template-badge-ember    { background: linear-gradient(135deg, #1c1917, #78350f); }
+.template-badge-blaze    { background: linear-gradient(135deg, #b91c1c, #f97316); }
+.template-badge-char     { background: linear-gradient(135deg, #292524, #57534e); }
+.template-badge-warm     { background: linear-gradient(135deg, #c2410c, #fbbf24); }
+.template-badge-mist     { background: linear-gradient(135deg, #475569, #94a3b8); }
+.template-badge-pop      { background: linear-gradient(135deg, #db2777, #f59e0b); }
 
 /* --- Mini Preview mockup --- */
 .template-preview {
