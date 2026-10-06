@@ -196,6 +196,7 @@ section { padding: var(--space-24) 0; position: relative; }
 .lb-1 { top: 15%; right: 0%; animation-delay: 0s; }
 .lb-2 { bottom: 25%; right: 5%; animation-delay: 1.5s; }
 .lb-3 { bottom: 10%; left: 0%; animation-delay: 3s; }
+.lb-4 { top: 20%; left: 0%; animation-delay: 4.5s; }
 @keyframes floatBubble { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-10px) scale(1.05); } }
 
 
