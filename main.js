@@ -163,23 +163,27 @@ document.addEventListener('click', (e) => {
 });
 
 // ====== Template Selection & Checkout ======
+window.buildRegisterUrl = function(templateId) {
+  const planType = 'monthly';
+
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  const registerBaseUrl = isLocal ? 'http://localhost:5173' : 'https://register.global-reaches.com';
+
+  const refCode = window.getReferralCode();
+  const refParam = refCode ? `&ref=${encodeURIComponent(refCode)}` : '';
+  return `${registerBaseUrl}/?theme=${encodeURIComponent(templateId)}&plan=${planType}${refParam}`;
+};
+
 window.selectTemplate = function(themeId) {
   localStorage.setItem('landy_selected_template', themeId);
-  
+
   // Highlight selected card
   document.querySelectorAll('.template-card').forEach(card => {
     card.classList.toggle('selected', card.dataset.theme === themeId);
   });
 
-  // Scroll to pricing
-  setTimeout(() => {
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
-      const headerHeight = document.getElementById('header')?.offsetHeight || 0;
-      const top = pricingSection.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  }, 300);
+  // Go straight to the registration page with the chosen theme
+  window.location.href = window.buildRegisterUrl(themeId);
 };
 
 window.getSelectedTemplate = function() {
@@ -215,15 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       try {
         const templateId = window.getSelectedTemplate();
-        const planType = 'monthly';
-        
-        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        const registerBaseUrl = isLocal ? 'http://localhost:5173' : 'https://register.global-reaches.com'; 
-        
-        const refCode = window.getReferralCode();
-        const refParam = refCode ? `&ref=${encodeURIComponent(refCode)}` : '';
-        const redirectUrl = `${registerBaseUrl}/?theme=${templateId}&plan=${planType}${refParam}`;
-        window.location.href = redirectUrl;
+        window.location.href = window.buildRegisterUrl(templateId);
       } catch (error) {
         console.error("Transition error:", error);
         alert("エラーが発生しました。");
