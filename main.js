@@ -335,3 +335,18 @@ window.toggleFaqMore = function() {
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg> もっと見る（残り8問）';
   }
 };
+
+// 調査レポート（survey.neural-seeds.com）へのリンクのクリックを計測する（GA4・Clarity）
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[data-survey-link]');
+  if (!link) return;
+  const location = link.dataset.surveyLink;
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'survey_report_click', { link_location: location, link_url: link.href, transport_type: 'beacon' });
+    }
+    if (typeof window.clarity === 'function') {
+      window.clarity('event', 'survey_report_click');
+    }
+  } catch (err) { /* 計測の失敗でリンク遷移を止めない */ }
+});

@@ -2769,3 +2769,40 @@ input:checked + .slider:before {
   .answer-first-section { padding: var(--space-12) 0; }
 }
 
+
+/* --- 調査レポートへの導線カード（pain-points の下） --- */
+.survey-card {
+  display: block;
+  max-width: 760px;
+  margin: var(--space-12) auto 0;
+  padding: var(--space-6) var(--space-8);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.survey-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.survey-card:focus-visible { outline: 3px solid var(--color-primary-light); outline-offset: 3px; }
+.survey-card-tag {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+.survey-card-stat { font-size: 1.15rem; font-weight: 700; line-height: 1.6; margin: 0 0 var(--space-2); }
+.survey-card-stat strong { font-size: 1.8rem; color: var(--color-red); margin-left: 0.2em; }
+.survey-card-note { font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.8; margin: 0 0 var(--space-3); }
+.survey-card-more { display: inline-flex; align-items: center; gap: 4px; font-size: var(--font-size-sm); font-weight: 700; color: var(--color-primary); }
+@media (max-width: 768px) {
+  .survey-card { padding: var(--space-5); }
+  .survey-card-stat { font-size: 1.05rem; }
+  .survey-card-stat strong { font-size: 1.5rem; }
+}
